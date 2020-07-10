@@ -1,0 +1,29 @@
+{% extends "layout.njk" %}
+
+{% block content %}
+<div class="card table-container">
+    <a href="/programadores/create">novo</a>
+    <table width="100%">
+        <thead>
+            <tr>
+                <th>programador</th>
+                <th>atendimento</th>
+                <th>ação</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for programador in programadores %}
+            <tr>
+                <td>
+                    <span style="background-image: url({{programador.avatar_url}})"></span>
+                    {{programador.name}}
+                </td>
+                <td>{{programador.services}}</td>
+                <td><a href="/programadores/{{programador.id}}">ver</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% endblock content %}

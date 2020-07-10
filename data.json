@@ -1,0 +1,25 @@
+{
+  "clientes": [
+    {
+      "id": 1,
+      "avatar_url": "https://cdn130.picsart.com/290589774002211.png?type=webp&to=min&r=240",
+      "name": "asdasd",
+      "email": "ddadad@gmail.com",
+      "birth": 1593561600000,
+      "gender": "M",
+      "services": "c#, javascript",
+      "money": "1"
+    }
+  ],
+  "programadores": [
+    {
+      "id": 1,
+      "avatar_url": "https://cdn130.picsart.com/290589774002211.png?type=webp&to=min&r=240",
+      "name": "asd",
+      "birth": 283996800000,
+      "gender": "M",
+      "services": "c#, javascript",
+      "created_at": 1594353892940
+    }
+  ]
+}

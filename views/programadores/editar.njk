@@ -1,0 +1,45 @@
+{% extends "layout.njk" %}
+
+{% block content %}
+
+<div class="card">
+
+    <section 
+        class="avatar" 
+        style="background: url({{programador.avatar_url}}) no-repeat center center / cover">
+    </section>
+
+    <section class="details">
+        <form  method="POST" action="/programadores?_method=PUT">
+        
+            <h3>editar programador</h3>
+
+            {% include 'programadores/campos.njk' %} 
+
+            <input 
+                type="hidden" 
+                name="id"
+                value={{programador.id}}>
+
+        </form>
+
+        <form id="form-delete" action="/programadores?_method=DELETE" method="post">
+            <input type="hidden" name="id" value={{programador.id}}>
+            <button type="submit">deletar</button>
+        </form>
+
+    </section>
+</div>
+
+<script>  
+    const formDelete = document.querySelector("#form-delete")
+    formDelete.addEventListener("submit", function(event) {
+        const confirmation = confirm("deseja deletar?")
+        if(!confirmation) {
+            event.preventDefault()
+        }
+    })
+</script>
+
+
+{% endblock content %}

@@ -1,0 +1,76 @@
+<div class="item">
+    <div>avatar url</div>
+    <div>
+        <input 
+            type="url" 
+            name="avatar_url"
+            placeholder="http://"
+            value="{{ programador.avatar_url }}"
+        >
+    </div>
+</div>
+
+<div class="item">
+    <div>programador</div>
+    <div>
+        <input 
+            type="text"
+            name="name"
+            placeholder="nome do programador"
+            value="{{ programador.name }}"
+            
+        >
+    </div>
+</div>
+
+<div class="item">
+    <div>data de nascimento</div>
+    <div>
+        <input 
+            type="date" 
+            name="birth"
+            value="{{ programador.birth }}"
+
+        >
+    </div>
+</div>
+
+<div class="item">
+    <div>sexo</div>
+    <div>
+        <span>
+            <input 
+                type="radio" 
+                name="gender" 
+                value="M" 
+                {% if programador.gender == 'M' %}
+                    checked
+                {% endif %}> masculino
+        </span>
+        <span>
+            <input 
+                type="radio" 
+                name="gender" 
+                value="F"
+                {% if programador.gender == 'F' %}
+                    checked
+                {% endif %}
+                > feminino
+        </span>
+    </div>
+</div>
+
+<div class="item">
+    <div>area de atuação</div>
+    <div>
+        <input 
+            type="text" 
+            name="services"
+            placeholder="Separe os serviços prestados por vírgula"
+            value="{{ programador.services }}"
+            
+        >
+    </div>
+</div>
+
+<button type="submit">salvar</button>

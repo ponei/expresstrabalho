@@ -1,0 +1,46 @@
+{% extends "layout.njk" %}
+
+{% block content %}
+<div class="card">
+    <section 
+        class="avatar" 
+        style="background: url({{ programador.avatar_url }}) no-repeat center center / cover"></section>
+    <section class="details">
+    
+        <h3>detalhes</h3>
+
+        <div class="item">
+            <div>programador</div>
+            <div>{{ programador.name }}</div>
+        </div>
+
+        <div class="item">
+            <div>idade</div>
+            <div>{{ programador.age }}</div>
+        </div>
+
+        <div class="item">
+            <div>sexo</div>
+            <div>{{ "Masculino" if programador.gender == "M" else "Feminino" }}</div>
+        </div>
+
+        <div class="item">
+            <div>linguagens</div>
+            <div>
+                {% for service in programador.services %}
+                <span>{{ service }}</span>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="item">
+            <div>desde</div>
+            <div>{{ programador.created_at }}</div>
+        </div>
+
+        <a href="/programadores/{{ programador.id }}/edit" class="button">editar</a>
+
+    </section>
+</div>
+
+{% endblock content %}
