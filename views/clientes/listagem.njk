@@ -1,0 +1,33 @@
+{% extends "layout.njk" %}
+
+{% block content %}
+<div class="card table-container">
+    <a href="/clientes/create">Novo</a>
+
+    <table width="100%">
+        <thead>
+            <tr>
+                <th>Membro</th>
+                <th>Email</th>
+                <th>area procurada</th>
+                <th>salario</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for cliente in clientes %}
+            <tr>
+                <td>
+                    <span style="background-image: url({{cliente.avatar_url}})"></span>
+                    {{cliente.name}}
+                </td>
+                <td>{{cliente.email}}</td>
+                <td>{{cliente.services}}</td>
+                <td>R${{cliente.money}}</td>
+                <td><a href="/clientes/{{cliente.id}}">ver</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% endblock content %}

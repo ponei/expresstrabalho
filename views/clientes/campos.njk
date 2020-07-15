@@ -1,0 +1,96 @@
+<div class="item">
+    <div>Avatar URL</div>
+    <div>
+        <input 
+            type="url" 
+            name="avatar_url"
+            placeholder="http://"
+            value="{{ cliente.avatar_url }}"
+        >
+    </div>
+</div>
+
+<div class="item">
+    <div>Nome</div>
+    <div>
+        <input 
+            type="text"
+            name="name"
+            value="{{ cliente.name }}"
+        >
+    </div>
+</div>
+
+<div class="item">
+    <div>Email</div>
+    <div>
+        <input 
+            type="email"
+            name="email"
+            value="{{ cliente.email }}"
+        >
+    </div>
+</div>
+
+<div class="item">
+    <div>Data de nascimento</div>
+    <div>
+        <input 
+            type="date" 
+            name="birth"
+            value="{{ cliente.birth }}"
+
+        >
+    </div>
+</div>
+
+<div class="item">
+    <div>Sexo</div>
+    <div>
+        <span>
+            <input 
+                type="radio" 
+                name="gender" 
+                value="M" 
+                {% if cliente.gender == 'M' %}
+                    checked
+                {% endif %}> Masculino
+        </span>
+        <span>
+            <input 
+                type="radio" 
+                name="gender" 
+                value="F"
+                {% if cliente.gender == 'F' %}
+                    checked
+                {% endif %}
+                > Feminino
+        </span>
+    </div>
+</div>
+
+<div class="item">
+    <div>area de atuação procurada</div>
+    <div>
+        <input 
+            type="text" 
+            name="services"
+            placeholder="Separe os serviços procurados por vírgula"
+            value="{{ cliente.services }}"
+            
+        >
+    </div>
+</div>
+
+<div class="item">
+    <div>salario (R$)</div>
+    <div>
+        <input 
+            type="number" 
+            name="money"
+            value="{{ cliente.money }}"
+        >
+    </div>
+</div>
+
+<button type="submit">Salvar</button>

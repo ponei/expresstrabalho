@@ -1,0 +1,49 @@
+{% extends "layout.njk" %}
+
+{% block content %}
+<div class="card">
+    <section 
+        class="avatar" 
+        style="background: url({{ cliente.avatar_url }}) no-repeat center center / cover"></section>
+    <section class="details">
+    
+        <h3>Detalhes</h3>
+
+        <div class="item">
+            <div>Membro</div>
+            <div>{{ cliente.name }}</div>
+        </div>
+
+        <div class="item">
+            <div>Membro</div>
+            <div>{{ cliente.email }}</div>
+        </div>
+
+        <div class="item">
+            <div>Aniversário</div>
+            <div>{{ cliente.birth }}</div>
+        </div>
+
+        <div class="item">
+            <div>Sexo</div>
+            <div>{{ "Masculino" if cliente.gender == "M" else "Feminino" }}</div>
+        </div>
+
+        <div class="item">
+            <div>areas procuradas</div>
+            <div>{{ cliente.services }}</div>
+        </div>
+
+        <div class="item">
+            <div>salario (R$)</div>
+            <div>{{ cliente.money }}</div>
+        </div>
+
+        
+
+        <a href="/clientes/{{ cliente.id }}/edit" class="button">Editar</a>
+
+    </section>
+</div>
+
+{% endblock content %}
